@@ -1,0 +1,102 @@
+.container{
+    background-image: url("../../../assets/img/Netflix_Cover.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 100%;
+    height: 100vh;
+  }
+.login-div {
+    width: 70%;
+    margin-left: 12.5%;
+    height: 70%;
+    padding: 19px 35px 35px 35px;
+    border-radius: 40px;
+    background: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+}
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 15%;
+}
+
+.home {
+  cursor: pointer;
+  float: right;
+  margin-right: 3%;
+  margin-top: 1.5%;
+}
+
+@media only screen and (max-width: 600px){
+    .login-div {
+        width: 57%;
+        margin-left: 13%;
+        height: 52%;
+        padding: 26px 35px 35px 35px;
+        border-radius: 40px;
+        background: #ecf0f3;
+        box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+    }
+}
+
+.fields {
+    width: 100%;
+    padding: 10px 5px 5px 5px;
+  }
+  .fields input {
+    border: none;
+    outline: none !important;
+    background: none !important;
+    font-size: 18px;
+    color: #555;
+    padding:15px 10px 20px 5px;
+  }
+  .username, .password {
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1,
+                inset -8px -8px 8px #ffffff;
+  }
+
+  .round_logo{
+      min-width: 40px;
+      max-width: 100px;
+      margin-left: 3.4rem;
+      margin-bottom: 0.5rem;
+
+  }         
+
+  .signin-button {
+    outline: none;
+    border:none;
+    cursor: pointer;
+    width:100%;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    color:#fff;
+    text-align: center;
+    background: #ff9b93;
+    box-shadow: 3px 3px 8px #b1b1b1,
+                -3px -3px 8px #ffffff;
+    transition: 0.5s;
+    margin-top: 3%;
+
+  }
+  .signin-button:hover {
+    background:black;
+  }
+  .signin-button:active {
+    background:black;
+  }
+
+  
+
+  

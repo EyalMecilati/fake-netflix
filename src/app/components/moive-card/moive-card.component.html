@@ -1,0 +1,17 @@
+<div class="container" *ngIf="movie_info" style="background:linear-gradient(to left, rgba(0,0,0,0) 20%, rgba(0,0,0,1)),url('https://image.tmdb.org/t/p/w185/{{movie_info.poster_path}}'); background-repeat: no-repeat; background-size: cover;">
+  <div class="side_content">
+    <h2>{{ movie_info.title }}</h2>
+    <div class="second_row">
+      <span>release date: {{ movie_info.release_date }}, </span>
+      <span> {{ movie_info.status }}, </span>
+      <span>Rating: {{ movie_info.vote_average }}</span>
+    </div>
+    <p class="movie_desc">{{ movie_info.overview }}</p>
+    <ul>
+      <li>{{ movie_info.runtime }} - Min</li>        
+      <li>Revenue: {{ movie_info.revenue }}</li>
+      <li>Genres: <span *ngFor="let item of movie_info.genres"> {{ item.name}},</span></li>
+    </ul>
+  </div>
+</div>
+           

@@ -1,0 +1,43 @@
+<h1
+  style="position: absolute; top: 25%; left: 25%; color: red"
+  *ngIf="!authorized"
+>
+  Wrong email or password
+</h1>
+<div class="wrapper" *ngIf="authorized">
+  <div class="navbar">
+    <img class="logo" src="../../../assets/img/netflix_logo.png" />
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+            <h2>Search</h2>
+        </div>
+        <div class="flip-box-back">
+            <form [formGroup]="search_form" (ngSubmit)="handle_submit()">
+                <mat-form-field class="form_field" color="accent">
+                  <input
+                    matInput
+                    formControlName="title"
+                    type="text"
+                    class="user-input"
+                    placeholder="search movie by name"
+                    value="Harry Potter"
+                  />
+                </mat-form-field>
+                <button class="search_btn"><span class="material-icons search"> search </span></button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mat-icon class="home" [routerLink]="['/']">home</mat-icon>
+  <div class="container">
+    <div *ngFor="let movie of movies" class="item" [id]="movie.id">
+      <img
+        (click)="get_movie_id(movie.id)"
+        src="https://image.tmdb.org/t/p/w185/{{ movie.poster_path }}"
+        alt="Animals"
+      />
+    </div>
+  </div>
+</div>

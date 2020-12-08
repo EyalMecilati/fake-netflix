@@ -1,0 +1,53 @@
+<mat-toolbar class="toolbar">
+  <img class="logo" src="../../../assets/img/netflix_logo.png" />
+  <mat-icon class="home" [routerLink]="['/']">home</mat-icon>
+</mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="rejisterForm" (ngSubmit)="handleSubmit()" class="form">
+    <h2>You're one step from a free membership</h2>
+    <h3 *ngIf="user_already_register" style="color:red">A user with this email adrass is already register</h3>
+    <mat-form-field class='form_field' color='warn'>
+      <mat-label>first name</mat-label>
+      <input
+        value=" "
+        type="text"
+        formControlName="first_name"
+        required
+        matInput
+        placeholder="john"
+      />
+    </mat-form-field>
+    <mat-form-field class='form_field' color='warn'>
+      <mat-label>Last name</mat-label>
+      <input
+        type="text"
+        formControlName="last_name"
+        required
+        matInput
+        placeholder="doe"
+      />
+    </mat-form-field>
+    <mat-form-field class='form_field' color='warn'>
+      <mat-label>Enter you're email</mat-label>
+      <input
+        type="email"
+        formControlName="email"
+        required
+        matInput
+        placeholder="netflix@gmail.com"
+      />
+    </mat-form-field>
+    <mat-form-field class='form_field' color='warn'>
+      <mat-label>password</mat-label>
+      <input
+        type="password"
+        required
+        formControlName="password_row"
+        matInput
+        placeholder="*******"
+      />
+    </mat-form-field>
+    <button mat-button color="warn" class="submit_btn">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,133 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.container {
+    padding:1rem 1rem 0 1rem ;
+    display: flex;
+    flex-wrap: wrap;   
+
+  }
+  
+  .item {
+    margin-top: 40px;
+    position: relative;
+    display: block;
+    transition: transform 500ms;
+  }
+  
+  .container:focus-within .item,
+  .container:hover .item {
+    transform: translateX(-25%);
+  }
+  
+  .item:focus ~ .item,
+  .item:hover ~ .item {
+    transform: translateX(25%);
+  }
+  
+  .container .item:focus,
+  .container .item:hover {
+    transform: scale(1.5);
+    z-index: 1;
+  }
+  
+  body {
+    overflow: hidden;
+  }
+  
+  .item img {
+    display: block;
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .logo {
+    width: 15%;
+  }
+  
+  .home {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: blanchedalmond;
+    cursor: pointer;
+  }
+
+  .container{
+      background-color: black;
+  }
+
+  @media only screen and (max-width: 600px){
+      .item img {
+        width: 100px !important;
+        height: 100px !important;
+
+      }
+
+      .container{
+       padding-left: 8%;
+      background-color: black;
+
+    }
+  }
+
+
+  .flip-box {
+    margin-left:6%;
+    margin-top: 10px;
+    background-color: black;
+    width: 100%;
+    height: 100px;
+    perspective: 1000px;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateX(90deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: black;
+    color: white;
+  }
+  
+  .flip-box-back {
+    background-color: black;
+    color: white;
+    transform: rotateX(240deg);
+  }
+
+  .search{
+      font-size: 10px;
+      background-color: '#ff4081' !important;
+  }
+
+  .search_btn{
+    cursor: pointer;
+  }

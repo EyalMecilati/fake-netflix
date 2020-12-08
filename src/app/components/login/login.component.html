@@ -1,0 +1,37 @@
+<div class="container">
+    <img class="logo" src="../../../assets/img/netflix_logo.png" />
+    <mat-icon class="home" [routerLink]="['/']">home</mat-icon>
+    <div class="login-div">
+      <div class="logo">
+        <img
+          class="round_logo"
+          src="../../../assets/img/round_logo.png"
+          alt="round logo"
+        />
+      </div>
+      <div class="fields">
+        <form [formGroup]="login_form" (ngSubmit)='handle_submit()'>
+          <div class="username">
+            <input
+             formControlName="email"
+              type="username"
+              class="user-input"
+              placeholder="username"
+              value="email@gmail.com"
+            />
+          </div>
+          <div class="password">
+            <input
+              type="password"
+              class="pass-input"
+              placeholder="password"
+              value="****"
+              formControlName='password_row'
+            />
+          </div>
+    
+          <button class="signin-button">Login</button>
+        </form>
+      </div>
+    </div>
+</div>
