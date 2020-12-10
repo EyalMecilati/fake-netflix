@@ -28,11 +28,9 @@ export class UserMainComponent implements OnInit {
     const token = localStorage.getItem('token');
     this.authService.check_authorization(token).subscribe(
       (res) => {
-        console.log('approved: ' + res);
         this.authorized = true;
       },
       (err) => {
-        console.log('not-approved: ' + err);
         this.authorized = false;
         setTimeout(() => {
           this.router.navigateByUrl('login');
@@ -47,7 +45,6 @@ export class UserMainComponent implements OnInit {
         this.movies = res.results;
       },
       (err) => {
-        console.log(err);
         this.movies = null;
       }
     );
@@ -59,10 +56,8 @@ export class UserMainComponent implements OnInit {
 
   public handle_submit(){  
     this.authService.get_movie_by_search(this.search_form.value.title).subscribe(res=>{
-      console.log(res)
       this.movies = res.results
     },err=>{
-      console.log(err)
       this.search_form.value.title = ''     
     })
   }

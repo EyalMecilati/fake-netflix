@@ -1,6 +1,5 @@
 <mat-toolbar class="toolbar">
-  <img class="logo" src="../../../assets/img/netflix_logo.png" />
-  <mat-icon class="home" [routerLink]="['/']">home</mat-icon>
+  <img [routerLink]="['/']" class="logo" src="../../../assets/img/netflix_logo.png" />
 </mat-toolbar>
 
 <div class="container">
@@ -10,7 +9,7 @@
     <mat-form-field class='form_field' color='warn'>
       <mat-label>first name</mat-label>
       <input
-        value=" "
+        (click)="set_to_empty('first_name')"
         type="text"
         formControlName="first_name"
         required
@@ -21,6 +20,7 @@
     <mat-form-field class='form_field' color='warn'>
       <mat-label>Last name</mat-label>
       <input
+      (click)="set_to_empty('last_name')"
         type="text"
         formControlName="last_name"
         required
@@ -31,6 +31,7 @@
     <mat-form-field class='form_field' color='warn'>
       <mat-label>Enter you're email</mat-label>
       <input
+      (click)="set_to_empty('email')"
         type="email"
         formControlName="email"
         required
@@ -41,6 +42,7 @@
     <mat-form-field class='form_field' color='warn'>
       <mat-label>password</mat-label>
       <input
+      (click)="set_to_empty('password_row')"
         type="password"
         required
         formControlName="password_row"

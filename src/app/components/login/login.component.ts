@@ -16,8 +16,9 @@ export class LoginComponent implements OnInit {
   constructor(private fBuilder: FormBuilder, private router: Router, private authService:AuthService) { }
 
   ngOnInit(): void {
+    let user_email = localStorage.getItem('email');
     this.login_form = this.fBuilder.group({
-      email: ['johndoe@gmail.com', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+      email: [user_email, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password_row: ['*****', [Validators.required, Validators.minLength(4)]]
     });
   }
@@ -32,6 +33,10 @@ export class LoginComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  public set_to_empty(input_name){
+    this.login_form.controls[input_name].setValue('');
   }
 
 }

@@ -6,31 +6,34 @@
 </h1>
 <div class="wrapper" *ngIf="authorized">
   <div class="navbar">
-    <img class="logo" src="../../../assets/img/netflix_logo.png" />
+    <img
+      [routerLink]="['/']"
+      class="logo"
+      src="../../../assets/img/netflix_logo.png"
+    />
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">
-            <h2>Search</h2>
+          <h2 class="search_title">Search</h2>
         </div>
         <div class="flip-box-back">
-            <form [formGroup]="search_form" (ngSubmit)="handle_submit()">
-                <mat-form-field class="form_field" color="accent">
-                  <input
-                    matInput
-                    formControlName="title"
-                    type="text"
-                    class="user-input"
-                    placeholder="search movie by name"
-                    value="Harry Potter"
-                  />
-                </mat-form-field>
-                <button class="search_btn"><span class="material-icons search"> search </span></button>
-              </form>
+          <form [formGroup]="search_form">
+            <mat-form-field class="form_field" color="accent">
+              <input
+                matInput
+                formControlName="title"
+                type="text"
+                class="user-input"
+                placeholder="search movie by name"
+                value="Harry Potter"
+              />
+            </mat-form-field>
+            <span (click)="handle_submit()" class="material-icons">search</span>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  <mat-icon class="home" [routerLink]="['/']">home</mat-icon>
   <div class="container">
     <div *ngFor="let movie of movies" class="item" [id]="movie.id">
       <img

@@ -1,6 +1,5 @@
 <div class="container">
-    <img class="logo" src="../../../assets/img/netflix_logo.png" />
-    <mat-icon class="home" [routerLink]="['/']">home</mat-icon>
+    <img [routerLink]="['/']" class="logo" src="../../../assets/img/netflix_logo.png" />
     <div class="login-div">
       <div class="logo">
         <img
@@ -8,11 +7,12 @@
           src="../../../assets/img/round_logo.png"
           alt="round logo"
         />
-      </div>
+      </div> 
       <div class="fields">
         <form [formGroup]="login_form" (ngSubmit)='handle_submit()'>
           <div class="username">
             <input
+            (click)="set_to_empty('email')"
              formControlName="email"
               type="username"
               class="user-input"
@@ -22,6 +22,7 @@
           </div>
           <div class="password">
             <input
+            (click)="set_to_empty('password_row')"
               type="password"
               class="pass-input"
               placeholder="password"

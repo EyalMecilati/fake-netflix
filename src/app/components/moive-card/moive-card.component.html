@@ -1,4 +1,4 @@
-<div class="container" *ngIf="movie_info" style="background:linear-gradient(to left, rgba(0,0,0,0) 20%, rgba(0,0,0,1)),url('https://image.tmdb.org/t/p/w185/{{movie_info.poster_path}}'); background-repeat: no-repeat; background-size: cover;">
+<div class="container" *ngIf="movie_info" style="background:linear-gradient(to left, rgba(0,0,0,0) 20%, rgba(0,0,0,1)),url('https://image.tmdb.org/t/p/w185/{{movie_info.backdrop_path}}'); background-repeat: no-repeat; background-size: cover;">
   <div class="side_content">
     <h2>{{ movie_info.title }}</h2>
     <div class="second_row">
@@ -9,9 +9,12 @@
     <p class="movie_desc">{{ movie_info.overview }}</p>
     <ul>
       <li>{{ movie_info.runtime }} - Min</li>        
-      <li>Revenue: {{ movie_info.revenue }}</li>
+      <li>Revenue: {{ movie_info.revenue | currency:'USD':'symbol' }}</li>
       <li>Genres: <span *ngFor="let item of movie_info.genres"> {{ item.name}},</span></li>
     </ul>
   </div>
 </div>
+    <div class="smaill_main">
+      <app-user-main></app-user-main>    
+    </div>
            

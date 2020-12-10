@@ -26,7 +26,6 @@ export class MoiveCardComponent implements OnInit {
         route_params = parmas
         this.authService.get_movie(route_params.id).subscribe(res=>{
           this.movie_info = res
-          console.log(res)
         },err=>{
           console.log(err)
         })

@@ -39,12 +39,16 @@ export class RegisterComponent implements OnInit {
   }
 
   public check_register(){
-    console.log(this.user);
     if(this.user.check){
       this.user_already_register = true;
     }else{
       this.router.navigateByUrl('login');
+      localStorage.setItem('email',this.rejisterForm.value.email)
     }
+  }
+
+  public set_to_empty(input_name){
+    this.rejisterForm.controls[input_name].setValue('');
   }
 
 }

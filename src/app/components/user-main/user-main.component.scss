@@ -53,6 +53,7 @@
 
   .logo {
     width: 15%;
+    cursor: pointer;
   }
   
   .home {
@@ -106,7 +107,7 @@
   
   .flip-box-front, .flip-box-back {
     position: absolute;
-    width: 100%;
+    width: 73%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -123,11 +124,35 @@
     transform: rotateX(240deg);
   }
 
-  .search{
-      font-size: 10px;
-      background-color: '#ff4081' !important;
+  button{
+      border: none;
+      font-size: 5px;
+      background-color: black !important;
+      color: black;
+      outline: none !important;
+
   }
 
-  .search_btn{
-    cursor: pointer;
+  .material-icons{
+    position: absolute;
+    top: 17%;
+    cursor: pointer;    
+    color: white !important;
   }
+
+  button:active {
+    border-style: outset;
+  }
+
+  .search_title{
+    border-bottom: 1px white solid;
+    padding-bottom: 3px;
+  }
+
+  button.active.focus, button.active:focus,
+button.focus, button:active.focus, 
+button:active:focus, button:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: black;
+}
