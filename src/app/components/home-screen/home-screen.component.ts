@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import anime from 'animejs/lib/anime.es.js';
 
 @Component({
   selector: 'app-home-screen',
@@ -10,6 +11,8 @@ export class HomeScreenComponent implements OnInit {
   public new_user:boolean = true;
 
   constructor() { }
+
+  
 
   ngOnInit(): void {
     this.check_if_user_first_time();

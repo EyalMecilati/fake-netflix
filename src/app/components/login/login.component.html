@@ -10,6 +10,9 @@
       </div> 
       <div class="fields">
         <form [formGroup]="login_form" (ngSubmit)='handle_submit()'>
+          <label class="error_msg" *ngIf="error_msg_email">Username is Not Register</label>
+          <label class="error_msg" *ngIf="error_msg_password">Wrong Password</label>
+
           <div class="username">
             <input
             (click)="set_to_empty('email')"

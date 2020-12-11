@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
 
   public login_form:FormGroup;
   public token:string;
+  public error_msg_email:boolean = false;
+  public error_msg_password:boolean = false;
 
   constructor(private fBuilder: FormBuilder, private router: Router, private authService:AuthService) { }
 
@@ -30,7 +32,14 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token',this.token)
         this.router.navigateByUrl('main-content')
       },err=>{
-        console.log(err);
+        console.log(err)
+        if(err.error.text == 'Not Allowed'){
+          this.error_msg_email = false;
+          this.error_msg_password = true;
+        }else if(err.error == 'Cannot Find User'){
+          this.error_msg_email = true;
+          this.error_msg_password = false;
+        }
       }
     )
   }

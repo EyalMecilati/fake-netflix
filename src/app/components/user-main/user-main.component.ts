@@ -51,6 +51,7 @@ export class UserMainComponent implements OnInit {
   }
 
   public get_movie_id(id){
+    window.scroll(0, 0);
     this.router.navigateByUrl('movie/'+id)
   }
 
